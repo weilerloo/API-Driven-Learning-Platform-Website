@@ -1,5 +1,7 @@
 A web application for serving and consuming learning content via APIs, with a frontend UI and backend services. This README covers architecture, technology choices, and a critical analysis of what works well and what can be improved.
 
+Tutorial Videos : https://youtu.be/sfXclt86sYI
+
 Table of Contents
 - Architecture Overview
 - Technology Choices
