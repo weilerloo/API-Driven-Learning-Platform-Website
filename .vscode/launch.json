@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Full Stack Debug",
+      "configurations": [
+        "Debug Backend",
+        "Debug Frontend (React)"
+      ]
+    }
+  ],
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Backend",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/backend/server.js", 
+      "outFiles": ["${workspaceFolder}/backend/dist/**/*.js"]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug Frontend (React)",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend/src"
+    }
+  ]
+}
