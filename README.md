@@ -8,23 +8,23 @@ This project demonstrates **API-driven development** with authentication, role-b
 
 ## 🗂 Repository Structure
 
-├── backend/ # Express + MongoDB server
-│ ├── config/ # DB connection, cloud configs
-│ ├── controllers/ # API controllers (auth, courses, wallet, etc.)
-│ ├── middlewares/ # Auth, validation, etc.
-│ ├── models/ # Mongoose schemas (User, Course, Section, etc.)
-│ ├── routes/ # Express routes
-│ └── server.js # Backend entry point
+├──     backend/ # Express + MongoDB server
+│ ├──   config/ # DB connection, cloud configs
+│ ├──   controllers/ # API controllers (auth, courses, wallet, etc.)
+│ ├──   middlewares/ # Auth, validation, etc.
+│ ├──   models/ # Mongoose schemas (User, Course, Section, etc.)
+│ ├──   routes/ # Express routes
+│ └──   server.js # Backend entry point
 │
-└── frontend/ # React (Vite) + Redux app
-├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Route pages
-│ ├── routes/ # Route config
-│ ├── services/ # API connectors (axios)
-│ ├── slices/ # Redux state management
-│ └── utils/ # Constants & helpers
-└── package.json
+└──     frontend/ # React (Vite) + Redux app
+├──     src/
+│ ├──   components/ # Reusable UI components
+│ ├──   pages/ # Route pages
+│ ├──   routes/ # Route config
+│ ├──   services/ # API connectors (axios)
+│ ├──   slices/ # Redux state management
+│ └──   utils/ # Constants & helpers
+└──     package.json
 
 
 ---
