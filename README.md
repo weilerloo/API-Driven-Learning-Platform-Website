@@ -5,16 +5,16 @@ Table of Contents
 - Technology Choices
 - Critical Analysis
 
-##Architecture Overview
+## Architecture Overview
 This project is structured as a separated frontend-backend architecture, with clear API boundaries, to support scalability, maintainability, and potentially multiple client types (web, mobile, etc.).
 
-###Frontend
+### Frontend
 The UI is a client application (likely using React / Next.js or similar) that fetches data from backend APIs and renders learning content (courses, lessons, quizzes, etc.). It handles routing, user interactions, presentation logic.
 
-###Backend
+### Backend
 The backend provides RESTful (or GraphQL) APIs for managing and serving learning resources: content items, user data, auth, progress tracking, etc. It handles business logic, data persistence, and security/authentication.
 
-####Learner Flow
+#### Learner Flow
 
 1. A learner visits a page (e.g. /courses) in the frontend.
 2. The frontend makes HTTP request(s) to the backend API (e.g. GET /api/courses).
@@ -32,17 +32,16 @@ For each lesson:
 2. The backend stores the video (e.g. in cloud storage) and metadata in the database.
 
 The backend returns a reference/URL for frontend rendering.
-
 Instructors can edit or update content (e.g. PUT /api/courses/:id for course details, PUT /api/videos/:id for video updates).
 User actions (e.g. marking lesson complete, submitting quiz) send write requests to backend. Backend updates data and returns an updated state.
--------------------------------------------------------------
-###Key Design Decisions
+
+### Key Design Decisions
 Separation of concerns: keeping UI and business logic separate for easier development, testing, deployment.
 API-first approach: ensures that the backend can service many types of clients.
 Scalability potential: backend may scale horizontally, frontend could be deployed via CDN or serverless.
 Flexibility: provision for future features such as user authentication, progress tracking, role-based access, content versioning, etc.
 
-##Technology Choices
+## Technology Choices
 
 Below are technologies / frameworks / tools chosen (or suggested), and reasons for choosing them. Adjust specifics based on what’s actually used in the repository.
 Component	Tool / Framework	Reasoning
@@ -55,18 +54,18 @@ Deployment / Hosting	Vercel, Netlify, or cloud (AWS, Azure, GCP) + Docker / serv
 Testing / CI/CD	Jest / Mocha + CI pipelines	Ensure correctness, prevent regressions; automate builds, tests, deployments.
 API Design	REST or GraphQL	REST is simple, well understood; GraphQL allows more flexible queries (e.g. only fetch needed fields).
 
-##Critical Analysis
+## Critical Analysis
 
 Here is what works well in this architecture (or as implemented), what limitations are present, and suggested next improvements.
 
-###What Works Well
+### What Works Well
 
 Modularity: clear separation between frontend and backend makes team work easier, allows independent updates / scaling.
 API-driven: enables future reuse (e.g. mobile apps) without re-doing backend logic.
 Scalability potential: architecture is relatively easy to scale (e.g. adding load balancing, independent deployment).
 Flexibility: ability to extend features – content types, user features, roles.
 
-##Limitations
+## Limitations
 
 1. Performance latency: multiple network hops (frontend → backend → database) can incur delay; if not optimized (caching, batching), can lead to slow pages.
 2. Security concerns: user auth, data validation, input sanitization, and protection against common attacks (XSS, SQL injection, etc.) must be carefully handled.
@@ -75,7 +74,7 @@ Flexibility: ability to extend features – content types, user features, roles.
 5. Frontend rendering trade-offs: SSR boosts performance & SEO, but increases backend or server costs; SPA improves user experience but can have SEO issues.
 
 
-##Potential Improvements / Next Steps
+## Potential Improvements / Next Steps
 
 1. Implement caching (e.g. CDN edge caching, in-memory cache, HTTP cache headers) for static assets & API responses where appropriate.
 2. Introduce pagination, filtering, and batching to reduce data transfer sizes.
@@ -128,35 +127,8 @@ Any configuration for hosting, environment variables, etc.
 
 (Optional) Docker-compose / Kubernetes or serverless setup details.
 
-Directory Structure
-API-Driven-Learning-Platform-Website/
-├── backend/
 
-│    ├── src/
-
-│    ├── routes/ / controllers / services
-
-│    ├── models/ (DB schemas)
-
-│    └── … 
-
-├── frontend/
-
-│    ├── src/
-
-│    ├── pages/ / components / styles
-
-│    ├── public/
-
-│    └── …
-
-├── .gitignore
-
-├── README.md
-
-└── (other config files)
-
-###License / Contribution
+### License / Contribution
 
 License: (Insert license, e.g. MIT)
 
